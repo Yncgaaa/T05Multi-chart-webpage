@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Australian Energy & TV Analytics Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- D3.js v7 CDN -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <header class="dashboard-header">
+    <div class="container">
+      <h1>Australian Household Appliance & Energy Analytics</h1>
+      <p class="subtitle">
+        Visualizing television energy ratings, display technology consumption, and wholesale electricity spot market trends.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="charts-grid">
+      <!-- 1. Scatter Plot Div -->
+      <article class="chart-card">
+        <header class="card-header">
+          <h2>Energy Consumption vs. Star Rating</h2>
+          <p>Annual energy consumption plotted against star ratings across TV models.</p>
+        </header>
+        <div id="scatter-chart" class="chart-container"></div>
+      </article>
+
+      <!-- 2. Donut Chart Div -->
+      <article class="chart-card">
+        <header class="card-header">
+          <h2>Energy by Screen Technology</h2>
+          <p>Aggregated consumption distribution across panel technologies.</p>
+        </header>
+        <div id="donut-chart" class="chart-container"></div>
+      </article>
+
+      <!-- 3. Bar Chart Div -->
+      <article class="chart-card">
+        <header class="card-header">
+          <h2>55" Television Energy Comparison</h2>
+          <p>Average energy consumption specifically across 55-inch models.</p>
+        </header>
+        <div id="bar-chart" class="chart-container"></div>
+      </article>
+
+      <!-- 4. Line Chart Div -->
+      <article class="chart-card">
+        <header class="card-header">
+          <h2>Spot Power Prices (1998–2024)</h2>
+          <p>Historical trends in NEM wholesale electricity spot pricing.</p>
+        </header>
+        <div id="line-chart" class="chart-container"></div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Global Tooltip Element -->
+  <div id="tooltip" class="chart-tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <!-- Modular Scripts -->
+  <script src="load-data.js"></script>
+  <script src="scatterplot.js"></script>
+  <script src="donut.js"></script>
+  <script src="bar.js"></script>
+  <script src="line.js"></script>
+</body>
+</html>
